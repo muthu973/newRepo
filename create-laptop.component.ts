@@ -13,7 +13,7 @@ import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 })
 export class CreateLaptopComponent implements OnInit {
   laptop:Laptop=new Laptop();
-  brands:string[];
+  brandnames:string[];
   brandcode:number;
   constructor(private laptopService:LaptopService,private route:Router,private brandSer:BrandService) { }
 
@@ -24,7 +24,7 @@ export class CreateLaptopComponent implements OnInit {
   get(){
    this.brandSer.getBrandName().subscribe(data=>{
     console.log(data);
-    this.brands=data;
+    this.brandnames=data;
    });
   }
   onSelect(){
